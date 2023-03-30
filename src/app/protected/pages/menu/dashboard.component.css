@@ -1,0 +1,505 @@
+:root {
+    --main-color: linear-gradient(185deg,#00abb5 17%,#009ea7 30.8%,#007c86 92.81%);
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+    --text-title-breadcrumb: #009bac;
+}
+
+html {
+    font-size: 0.85rem;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    /* width: 345px; */
+    width: 270px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: 100;
+    transition: width 300ms;
+
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    padding: 1.5rem 0rem 1rem 2rem;
+    color: #fff;
+}
+
+.sidebar-brand span {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.sidebar-menu {
+    margin-top: 1rem;
+}
+
+.sidebar-menu li {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+}
+
+.sidebar-menu a {
+    display: block;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+/* .sidebar-menu a.active:hover :not(.title .bx) {
+    background: #fff;
+    padding-left: 10px;
+    color: var(--main-color);
+    border-radius: 30px 0px 0px 30px;
+} */
+
+#nav-toggle:checked+.sidebar .sidebar-menu .activo span{
+    color: #fff;
+}
+
+.activo {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 0.2rem;
+}
+
+.activo a i,
+.activo a span{
+    color: #1D2231;
+}
+
+.sidebar-menu a{
+    display: flex;
+    column-gap: 0.7rem;
+}
+
+
+#nav-toggle:checked+.sidebar {
+    width: 70px;
+}
+
+#nav-toggle:checked+.sidebar .sidebar-brand,
+#nav-toggle:checked+.sidebar li {
+    padding-left: 1rem;
+    text-align: initial;
+}
+
+.bx {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#nav-toggle:checked+.sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked+.sidebar li a span:last-child{
+    display: none;
+}
+
+#nav-toggle:checked~.main-content {
+    margin-left: 80px;
+}
+
+#nav-toggle:checked~.main-content header {
+    width: calc(100% - 70px);
+    left: 70px;
+}
+
+.jstree-children > ul {
+    display: none;
+}
+
+.jstree-children:hover > ul{
+    display: block;
+} 
+
+.jstree-children ul{
+    padding-left: 1.7rem;
+}
+
+.jstree-children ul a:hover {
+    color: #fff !important;
+}
+
+.scMenuTItems2 {
+    margin-top: 0.7rem;
+    display: flex;
+    border-bottom: 0.1px solid #fff6;
+    width: 50px;
+    font-weight: 100;
+    margin-bottom: 0px !important;
+    color: #fff;
+}
+
+.EzquinaUp {
+    left:270px;
+    top: 92px;
+    position: fixed;
+}
+
+#nav-toggle:checked+.sidebar .EzquinaUp {
+    left: 70px;
+    top: 92px;
+}
+
+#nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul > li a span:last-child {
+    display: inline;
+}
+
+#nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul > li a {
+    display: flex;
+    padding-bottom: 0.8rem;
+}
+
+#nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > a .title {
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    left: 18px;
+    top: -40px;
+    z-index: 2;
+    min-width: 350px;
+    padding: 0.5rem 1rem;
+    border-top-right-radius: 0.5rem;
+    background-color: #00595f;
+}
+
+#nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul {
+    position: absolute;
+    z-index: 1;
+    top: auto;
+    left: 70px;
+    background: #039aa3;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0.5rem;
+    min-width: 349px;
+    border-left: 4px solid #fb7600;
+    padding-left: 0px;
+    max-height: 45%;
+    overflow-y: auto;
+}
+
+.sidebar .sidebar-menu ul li:not(.scMenuTItems2) > a > .bx{
+    font-size: 2.4rem;
+}
+
+.main-content {
+    transition: margin-left 300ms;
+    margin-left: 280px;
+	display: flex;
+	flex-direction: column;
+	align-items: center
+    
+}
+
+header {
+    background-image: linear-gradient(105deg, #c572dd 0, #a761da 16.67%, #8251d7 33.33%, #4d42d4 50%, #0037d1 66.67%, #0031cd 83.33%, #002eca 100%);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    left: 270px;
+    min-height: 78px;
+    width: calc(100% - 260px);
+    top: 0;
+    z-index: 100;
+    transition: left 300ms;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+header h2 {
+    display: flex;
+    align-items: center;
+}
+
+header label span {
+    font-size: 1.7rem;
+    padding-right: 1rem;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+main {
+    margin-top: 100px;
+    padding: 2rem 3rem;
+    border-radius: 0.8rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 90px);
+    width: 100%;
+}
+
+.user-wrapper img {
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-wrapper small {
+    display: inline-block;
+    color: var(--text-grey);
+}
+
+.search-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.search-wrapper input {
+    height: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-wrapper img {
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-wrapper small {
+    display: inline-block;
+    color: var(--text-grey);
+}
+
+
+
+.logo-cloud {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+  
+  .logo-cloud:after {
+    content: "POLARIS CLOUD";
+    float: left;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.7;
+    font-weight: 700;
+    font-family: "cabin", sans-serif;
+    padding-left: 0.57rem;
+    transform: translateY(7px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > a,
+  #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul {
+    position: fixed;
+  }
+
+    /* ========= Configuracion =========== */
+
+.lista-configuracion {
+    position: absolute;
+    border-radius: 5px;
+    top: 80px;
+    width: 250px;
+    height: auto;
+    text-align: end;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 1px rgb(141, 140, 140);
+    display: none;
+  }
+  
+  .lista-configuracion > li {
+    margin-right: 10px;
+    margin-top: 5px;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .contenedor-configuracion {
+    display: flex;
+    flex: end;
+  } 
+  
+  .sidebar {
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+  
+  .sidebar::-webkit-scrollbar,
+  #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul::-webkit-scrollbar {
+      -webkit-appearance: none;
+  }
+  
+  .sidebar::-webkit-scrollbar:vertical,
+  #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul::-webkit-scrollbar:vertical {
+      width:10px;
+  }
+  
+  .sidebar::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+      display: none;
+  } 
+  
+  .sidebar::-webkit-scrollbar-thumb,
+  #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul::-webkit-scrollbar-thumb {
+      background-color: #fb7600;
+      border-radius: 20px;
+      border: 1px solid #f1f2f3;
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+      border-radius: 10px;  
+  }
+  
+  #nav-toggle:checked+.sidebar {
+      overflow-y: hidden;
+  }
+
+@media only screen and (min-width: 769px) { 
+
+    #nav-toggle:checked+.sidebar .sidebar-menu ul li:hover > .active2 > span {
+
+        position: fixed;
+        font-size: initial;
+        left: 5.2rem;
+        overflow: visible;
+        width: auto;
+        padding: 6px 8px;
+        min-width: 75px;
+        white-space: nowrap;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 3px;
+        background: #ff7800;
+        display: initial;
+    
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    .sidebar .sidebar-menu .activo span{
+        color: #1D2231 !important;
+    }
+
+    .EzquinaUp {
+        display: none;
+    }
+
+    #nav-toggle:checked+.sidebar .EzquinaUp{
+        left: 345px;
+        display: block;
+    }
+
+    .sidebar .sidebar-menu ul .jstree-children:hover > a .title {
+        left: 23.2px;
+    }
+
+    #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > a,
+    #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul {
+    position: relative;
+  }
+
+  #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > a .title {
+    left: 29px;
+}
+
+    #nav-toggle:checked+.sidebar {
+         left: 0 !important;
+         z-index: 100;
+         width: 345px;
+    }
+
+    #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > a .title {
+        font-size: 1.3rem;
+        padding: 0.2rem 1rem;
+        top: -33px;
+        background: none;
+    }
+
+    #nav-toggle:checked+.sidebar .sidebar-menu ul .jstree-children:hover > ul {
+        position: absolute;
+        z-index: 1;
+        left: -3px;
+        left: auto;
+        background: none;
+        border-left: none;
+        padding-left: 2rem;
+        max-height: 45%;
+    }
+
+    #nav-toggle:checked+.sidebar .sidebar-brand h2 span:last-child,
+    #nav-toggle:checked+.sidebar li a span:last-child {
+        display: inline;
+    }
+
+    .sidebar {
+        left: -100% !important;
+    }
+    
+    header h2 {
+        display: flex;
+        align-items: center;
+    }
+    header h2 label {
+        display: inline-block;
+        text-align: center;
+        background: var(--main-color);
+        padding-right: 0rem;
+        margin-right: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+    }
+    header h2 span {
+        text-align: center;
+        padding-right: 0rem;
+    }
+    header h2 {
+        font-size: 1.1rem;
+    }
+    .main-content {
+        width: 100%;
+        margin-left: 0rem;
+    }
+    header {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+}

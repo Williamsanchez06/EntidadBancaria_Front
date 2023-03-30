@@ -1,0 +1,60 @@
+
+h1,h2,h3 {
+    margin: 0;
+}
+
+.margin {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.contenido {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.contenido h1 {
+    color: #505963;
+    font-weight: 400;
+}
+
+.contenido h2 {
+    color: #322c27;
+}
+
+.contenido-tipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.card-transferencia {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    width: 25rem;
+}
+
+.card-transferencia:hover {
+    background-color: #d4d7d7;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.card-icon i {
+    font-size: 50px;
+    color: #2b3dd3;
+}
+
+.card-tipoMoviento h2{
+    color: #050709;
+}
+
+.card-tipoMoviento span{
+    color: #474e54b3;
+}

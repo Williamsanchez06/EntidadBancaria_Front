@@ -1,0 +1,33 @@
+<div class="arrow-left">
+    <i class='bx bxs-left-arrow-circle' routerLink="./senMoney"></i>
+</div>
+
+<div class="contenedor">
+
+    <h1 class="">Envia Dinero a Otro PayWill</h1>
+
+    <!-- Formulario -->
+    <form class="formulario-tarjeta" [formGroup]="miFormulario">
+        <div class="grupo">
+            <label for="inputNombre">Numero impreso En la Tarjeta</label>
+            <input formControlName="numTarjeta" type="text" id="inputNombre" maxlength="16" autocomplete="off">
+        </div>
+        <div class="grupo">
+            <label for="inputTelefono">Telefono</label>
+            <input formControlName="telefono" type="text" id="inputTelefono" maxlength="10" autocomplete="off">
+        </div>
+        <div class="grupo">
+            <label for="inputTransferir">Valor a Enviar</label>
+            <input formControlName="monto" type="text" id="inputTransferir" autocomplete="off">
+        </div>
+        <div class="grupo">
+            <label for="inputPassword">Tu Password</label>
+            <input formControlName="password" type="password" id="inputPassword" maxlength="10" autocomplete="off">
+        </div>
+        <p><span>*</span> Para hacer la transferencia debes colocar la contraseña de la cuenta</p>
+        
+        <button type="submit" class="btn-enviar" (click)="enviarDinero()">Enviar</button>
+
+    </form>
+
+</div>

@@ -1,0 +1,109 @@
+<div class="informacion" *ngIf="tieneCardAsociada()">
+  <div class="info-content">
+    <div class="contenido-info">
+      <div class="contenido">
+        <img src="../assets/images/banco.png" alt="imagen" />
+        <div class="card-dinero">
+          <p>${{ "300000" | number }}</p>
+          <span>Salario the las Mounth</span>
+        </div>
+      </div>
+
+      <div class="contenido">
+        <img src="../assets/images/compracartera.png" alt="imagen" />
+        <div class="card-dinero">
+          <p>${{ "300000" | number }}</p>
+          <span>Salario the las Mounth</span>
+        </div>
+      </div>
+
+      <div class="contenido">
+        <img src="../assets/images/dineromano.jpg" alt="imagen" />
+        <div class="card-dinero">
+          <p>${{ "300000" | number }}</p>
+          <span>Salario the last Month</span>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="margin">Detalle de Movimientos</h1>
+    <hr/>
+
+    <div class="row">
+      <div class="col">
+        <canvas
+          baseChart
+          class="chart"
+          [data]="barChartData"
+          [options]="barChartOptions"
+          [type]="barChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <aside class="aside" >
+    
+      <div class="card-aside">
+      <h1>You Cards</h1>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="card_image-banco">
+            <h1>PAYWILL</h1>
+            <img
+              src="./assets/images/icons/card-mastercard.png"
+              alt="icon-mastercard"
+            />
+          </div>
+          <div class="num_tarjeta">
+            <p class="blanco">{{ Infocard.numerotarjeta }}</p>
+          </div>
+          <div class="card-info">
+            <div class="card-name">
+              <span>Name Card</span>
+              <h3 class="blanco">{{ Infocard.nombretarjeta | titlecase }}</h3>
+            </div>
+            <div class="card-expiration">
+              <span>Expiracion Date</span>
+              <h3 class="blanco">{{ Infocard.expiracion }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h1 class="margin">Card Info</h1>
+      <div class="card-info">
+        <span>Card Number</span>
+        <b>1101...</b>
+      </div>
+
+      <div class="card-info">
+        <span>Saldo Actual</span>
+        <b>${{ Infocard.monto }}</b>
+      </div>
+
+      <div class="card-info">
+        <span>Currency</span>
+        <b>CO</b>
+      </div>
+
+      <div class="card-info">
+        <span>Status Card</span>
+        <b>{{ Infocard.expiracion }}(Active)</b>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<div *ngIf="!tieneCardAsociada()">
+    <div class="notiene">
+      <h1>Agrega una Tarjeta PayWill Para poder Hacer Transferencias</h1>
+      <button class="button" routerLink="../añadirCard">Agregar Una tarjeta Aqui</button>
+    </div>
+</div>

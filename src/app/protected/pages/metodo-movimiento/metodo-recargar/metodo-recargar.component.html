@@ -1,0 +1,23 @@
+<div class="arrow-left" >
+    <i class='bx bxs-left-arrow-circle' routerLink="./senMoney"></i>
+</div>
+<div class="contenedor">
+
+    <h1 class="">Recargar Cuenta PayWill</h1>
+
+    <!-- Formulario -->
+    <form action="" id="formulario-tarjeta" class="formulario-tarjeta" [formGroup]="miFormulario">
+        
+        <div class="grupo">
+            <label for="inputTransferir">Valor a Recargar</label>
+            <input formControlName="monto" type="text" id="inputTransferir" autocomplete="off">
+        </div>
+        <div class="grupo">
+            <label for="inputPassword">Tu Password</label>
+            <input formControlName="password" type="password" id="inputPassword" maxlength="10" autocomplete="off">
+        </div>
+        
+        <button type="submit" class="btn-enviar" (click)="recargarCuenta()">Recargar Cuenta</button>
+    </form>
+
+</div>
